@@ -3,7 +3,7 @@ Collection of programs written in C and Python while taking CS50 provided by Har
 
 Week 0:
 
-
+Simple Scratch Project to visualize code and GUI.
 
 Week 1:
 
