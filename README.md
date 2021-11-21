@@ -1,27 +1,67 @@
 # CS50Harvard
 Collection of programs written in C and Python while taking CS50 provided by Harvard University
 
-Week 0:
+Week 0 Scratch:
 
 Simple Scratch Project to visualize code and GUI.
 
-Week 1:
+Week 1 C:
+
+**Hello.c** Simple program to print a greeting given a user inputted name.
+
+**Population.c** Say we have a population of n llamas. Each year, n / 3 new llamas are born, and n / 4 llamas pass away.
+
+For example, if we were to start with n = 1200 llamas, then in the first year, 1200 / 3 = 400 new llamas would be born and 1200 / 4 = 300 llamas would pass away. At the end of that year, we would have 1200 + 400 - 300 = 1300 llamas.
+
+To try another example, if we were to start with n = 1000 llamas, at the end of the year, we would have 1000 / 3 = 333.33 new llamas. We can’t have a decimal portion of a llama, though, so we’ll truncate the decimal to get 333 new llamas born. 1000 / 4 = 250 llamas will pass away, so we’ll end up with a total of 1000 + 333 - 250 = 1083 llamas at the end of the year.
+
+Complete the implementation of population.c, such that it calculates the number of years required for the population to grow from the start size to the end size.
+
+- Your program should first prompt the user for a starting population size.
+- If the user enters a number less than 9 (the minimum allowed population size), the user should be re-prompted to enter a starting population size until they enter a number that is greater than or equal to 9. (If we start with fewer than 9 llamas, the population of llamas will quickly become stagnant!)
+- Your program should then prompt the user for an ending population size.
+- If the user enters a number less than the starting population size, the user should be re-prompted to enter an ending population size until they enter a number that is greater than or equal to the starting population size. (After all, we want the population of llamas to grow!)
+- Your program should then calculate the (integer) number of years required for the population to reach at least the size of the end value.
+- Finally, your program should print the number of years required for the llama population to reach that end size, as by printing to the terminal Years: n, where n is the number of years.
+
+**Mario.c** A program that creates a sort of triangle-like structure with a size based off user input. For example an entry of "8" would result in: 
+Height: 8
+       #
+      ##
+     ###
+    ####
+   #####
+  ######
+ #######
+########
+
+**Cash.c** suppose that a cashier owes a customer some change and in that cashier’s drawer are quarters (25¢), dimes (10¢), nickels (5¢), and pennies (1¢). The problem to be solved is to decide which coins and how many of each to hand to the customer. Think of a “greedy” cashier as one who wants to take the biggest bite out of this problem as possible with each coin they take out of the drawer. For instance, if some customer is owed 41¢, the biggest first (i.e., best immediate, or local) bite that can be taken is 25¢. (That bite is “best” inasmuch as it gets us closer to 0¢ faster than any other coin would.) Note that a bite of this size would whittle what was a 41¢ problem down to a 16¢ problem, since 41 - 25 = 16. That is, the remainder is a similar but smaller problem. Needless to say, another 25¢ bite would be too big (assuming the cashier prefers not to lose money), and so our greedy cashier would move on to a bite of size 10¢, leaving him or her with a 6¢ problem. At that point, greed calls for one 5¢ bite followed by one 1¢ bite, at which point the problem is solved. The customer receives one quarter, one dime, one nickel, and one penny: four coins in total.
+
+It turns out that this greedy approach (i.e., algorithm) is not only locally optimal but also globally so for America’s currency (and also the European Union’s). That is, so long as a cashier has enough of each coin, this largest-to-smallest approach will yield the fewest coins possible. 
+
+Implement, in a file called cash.c in a ~/pset1/cash directory, a program that first asks the user how much change is owed and then prints the minimum number of coins with which that change can be made.
+
+- Use get_float to get the user’s input and printf to output your answer. Assume that the only coins available are quarters (25¢), dimes (10¢), nickels (5¢), and pennies (1¢).
+- We ask that you use get_float so that you can handle dollars and cents, albeit sans dollar sign. In other words, if some customer is owed $9.75 (as in the case where a newspaper costs 25¢ but the customer pays with a $10 bill), assume that your program’s input will be 9.75 and not $9.75 or 975. However, if some customer is owed $9 exactly, assume that your program’s input will be 9.00 or just 9 but, again, not $9 or 900. Of course, by nature of floating-point values, your program will likely work with inputs like 9.0 and 9.000 as well; you need not worry about checking whether the user’s input is “formatted” like money should be.
+- You need not try to check whether a user’s input is too large to fit in a float. Using get_float alone will ensure that the user’s input is indeed a floating-point (or integral) value but not that it is non-negative.
+- If the user fails to provide a non-negative value, your program should re-prompt the user for a valid amount again and again until the user complies.
+- So that we can automate some tests of your code, be sure that your program’s last line of output is only the minimum number of coins possible: an integer followed by \n.
+- Beware the inherent imprecision of floating-point values. Recall floats.c from class, wherein, if x is 2, and y is 10, x / y is not precisely two tenths! And so, before making change, you’ll probably want to convert the user’s inputted dollars to cents (i.e., from a float to an int) to avoid tiny errors that might otherwise add up!
+- Take care to round your cents to the nearest penny
+
+Week 2 Arrays:
 
 
 
-Week 2:
+Week 3 Algorithms:
 
 
 
-Week 3:
+Week 4 Memory:
 
 
 
-Week 4:
-
-
-
-Week 5:
+Week 5 Data Structures:
 
 **Inheritance:** A person’s blood type is determined by two alleles (i.e., different forms of a gene). The three possible alleles are A, B, and O, of which each person has two (possibly the same, possibly different). Each of a child’s parents randomly passes one of their two blood type alleles to their child. The possible blood type combinations, then, are: OO, OA, OB, AO, AA, AB, BO, BA, and BB.
 
@@ -51,15 +91,15 @@ Alright, the challenge now before you is to implement, in order, load, hash, siz
 
 
 
-Week 6:
+Week 6 Python:
 
 
 
-Week 7:
+Week 7 SQL:
 
 
 
-Week 8:
+Week 8 HTML, CSS, Javascript:
 
 
 
@@ -69,7 +109,7 @@ no projects
 
 
 
-Week 9:
+Week 9 Flask:
 
 
 Artificial Intelligence:
@@ -81,14 +121,6 @@ no projects
 Week 10:
 
 no projects (ethics)
-
-
-
-Week 11:
-
-
-
-Week 12:
 
 
 
