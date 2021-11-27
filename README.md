@@ -43,6 +43,40 @@ Implement, in a file called cash.c in a ~/pset1/cash directory, a program that f
 
 Week 2 Arrays:
 
+**Scrabble.c:** Complete the implementation of scrabble.c, such that it determines the winner of a short scrabble-like game, where two players each enter their word, and the higher scoring player wins.
+
+Notice that we’ve stored the point values of each letter of the alphabet in an integer array named POINTS.
+For example, A or a is worth 1 point (represented by POINTS[0]), B or b is worth 3 points (represented by POINTS[1]), etc.
+Notice that we’ve created a prototype for a helper function called compute_score() that takes a string as input and returns an int. Whenever we would like to assign point values to a particular word, we can call this function. Note that this prototype is required for C to know that compute_score() exists later in the program.
+In main(), the program prompts the two players for their words using the get_string() function. These values are stored inside variables named word1 and word2.
+In compute_score(), your program should compute, using the POINTS array, and return the score for the string argument. Characters that are not letters should be given zero points, and uppercase and lowercase letters should be given the same point values.
+For example, ! is worth 0 points while A and a are both worth 1 point.
+Though Scrabble rules normally require that a word be in the dictionary, no need to check for that in this problem!
+In main(), your program should print, depending on the players’ scores, Player 1 wins!, Player 2 wins!, or Tie!.
+
+
+**Readability.c:** Design and implement a program, readability, that computes the Coleman-Liau index of the text.
+
+Implement your program in a file called readability.c in a directory called readability.
+Your program must prompt the user for a string of text (using get_string).
+Your program should count the number of letters, words, and sentences in the text. You may assume that a letter is any lowercase character from a to z or any uppercase character from A to Z, any sequence of characters separated by spaces should count as a word, and that any occurrence of a period, exclamation point, or question mark indicates the end of a sentence.
+Your program should print as output "Grade X" where X is the grade level computed by the Coleman-Liau formula, rounded to the nearest integer.
+If the resulting index number is 16 or higher (equivalent to or greater than a senior undergraduate reading level), your program should output "Grade 16+" instead of giving the exact index number. If the index number is less than 1, your program should output "Before Grade 1".
+
+
+**Caesar.py:** Design and implement a program, caesar, that encrypts messages using Caesar’s cipher.
+
+Implement your program in a file called caesar.c in a directory called caesar.
+Your program must accept a single command-line argument, a non-negative integer. Let’s call it k for the sake of discussion.
+If your program is executed without any command-line arguments or with more than one command-line argument, your program should print an error message of your choice (with printf) and return from main a value of 1 (which tends to signify an error) immediately.
+If any of the characters of the command-line argument is not a decimal digit, your program should print the message Usage: ./caesar key and return from main a value of 1.
+Do not assume that k will be less than or equal to 26. Your program should work for all non-negative integral values of k less than 2^31 - 26. In other words, you don’t need to worry if your program eventually breaks if the user chooses a value for k that’s too big or almost too big to fit in an int. (Recall that an int can overflow.) But, even if k is greater than 26, alphabetical characters in your program’s input should remain alphabetical characters in your program’s output. For instance, if k is 27, A should not become [ even though [ is 27 positions away from A in ASCII, per http://www.asciichart.com/[asciichart.com]; A should become B, since B is 27 positions away from A, provided you wrap around from Z to A.
+Your program must output plaintext: (without a newline) and then prompt the user for a string of plaintext (using get_string).
+Your program must output ciphertext: (without a newline) followed by the plaintext’s corresponding ciphertext, with each alphabetical character in the plaintext “rotated” by k positions; non-alphabetical characters should be outputted unchanged.
+Your program must preserve case: capitalized letters, though rotated, must remain capitalized letters; lowercase letters, though rotated, must remain lowercase letters.
+After outputting ciphertext, you should print a newline. Your program should then exit by returning 0 from main.
+
+
 
 
 Week 3 Algorithms:
