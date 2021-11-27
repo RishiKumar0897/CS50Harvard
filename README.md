@@ -330,7 +330,44 @@ Ultimately, you should submit both your log.sql and answers.txt files.
 
 Week 8 HTML, CSS, Javascript:
 
+**Trivia:** Design a webpage using HTML, CSS, and JavaScript to let users answer trivia questions.
 
+In index.html, add beneath “Part 1” a multiple-choice trivia question of your choosing with HTML.
+You should use an h3 heading for the text of your question.
+You should have one button for each of the possible answer choices. There should be at least three answer choices, of which exactly one should be correct.
+Using JavaScript, add logic so that the buttons change colors when a user clicks on them.
+If a user clicks on a button with an incorrect answer, the button should turn red and text should appear beneath the question that says “Incorrect”.
+If a user clicks on a button with the correct answer, the button should turn green and text should appear beneath the question that says “Correct!”.
+In index.html, add beneath “Part 2” a text-based free response question of your choosing with HTML.
+You should use an h3 heading for the text of your question.
+You should use an input field to let the user type a response.
+You should use a button to let the user confirm their answer.
+Using JavaScript, add logic so that the text field changes color when a user confirms their answer.
+If the user types an incorrect answer and presses the confirmation button, the text field should turn red and text should appear beneath the question that says “Incorrect”.
+If the user types the correct answer and presses the confirmation button, the input field should turn green and text should appear beneath the question that says “Correct!”.
+Optionally, you may also:
+
+Edit styles.css to change the CSS of your webpage!
+Add additional trivia questions to your trivia quiz if you would like!
+
+
+**Homepage: ** Implement in your homepage directory a website that must:
+
+Contain at least four different .html pages, at least one of which is index.html (the main page of your website), and it should be possible to get from any page on your website to any other page by following one or more hyperlinks.
+Use at least ten (10) distinct HTML tags besides <html>, <head>, <body>, and <title>. Using some tag (e.g., <p>) multiple times still counts as just one (1) of those ten!
+Integrate one or more features from Bootstrap into your site. Bootstrap is a popular library (that comes with lots of CSS classes and more) via which you can beautify your site. See Bootstrap’s documentation to get started. In particular, you might find some of Bootstrap’s components of interest. To add Bootstrap to your site, it suffices to include
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+in your pages’ <head>, below which you can also include
+
+<link href="styles.css" rel="stylesheet">
+to link your own CSS.
+
+Have at least one stylesheet file of your own creation, styles.css, which uses at least five (5) different CSS selectors (e.g. tag (example), class (.example), or ID (#example)), and within which you use a total of at least five (5) different CSS properties, such as font-size, or margin; and
+Integrate one or more features of JavaScript into your site to make your site more interactive. For example, you can use JavaScript to add alerts, to have an effect at a recurring interval, or to add interactivity to buttons, dropdowns, or forms. Feel free to be creative!
+Ensure that your site looks nice on browsers both on mobile devices as well as laptops and desktops.
 
 Security:
 
@@ -339,6 +376,80 @@ no projects
 
 
 Week 9 Flask:
+
+**Birthdays:** Complete the implementation of a web application to let users store and keep track of birthdays.
+
+When the / route is requested via GET, your web application should display, in a table, all of the people in your database along with their birthdays.
+First, in application.py, add logic in your GET request handling to query the birthdays.db database for all birthdays. Pass all of that data to your index.html template.
+Then, in index.html, add logic to render each birthday as a row in the table. Each row should have two columns: one column for the person’s name and another column for the person’s birthday.
+When the / route is requested via POST, your web application should add a new birthday to your database and then re-render the index page.
+First, in index.html, add an HTML form. The form should let users type in a name, a birthday month, and a birthday day. Be sure the form submits to / (its “action”) with a method of post.
+Then, in application.py, add logic in your POST request handling to INSERT a new row into the birthdays table based on the data supplied by the user.
+Optionally, you may also:
+
+Add the ability to delete and/or edit birthday entries.
+Add any additional features of your choosing!
+  
+  
+**Finance:** Complete the implementation of register in such a way that it allows a user to register for an account via a form.
+
+Require that a user input a username, implemented as a text field whose name is username. Render an apology if the user’s input is blank or the username already exists.
+Require that a user input a password, implemented as a text field whose name is password, and then that same password again, implemented as a text field whose name is confirmation. Render an apology if either input is blank or the passwords do not match.
+Submit the user’s input via POST to /register.
+INSERT the new user into users, storing a hash of the user’s password, not the password itself. Hash the user’s password with generate_password_hash Odds are you’ll want to create a new template (e.g., register.html) that’s quite similar to login.html.
+Once the user is registered, you may either automatically log in the user or bring the user to a page where they can log in themselves.
+Once you’ve implemented register correctly, you should be able to register for an account and log in (since login and logout already work)! And you should be able to see your rows via sqlite3 or phpLiteAdmin.
+
+quote
+Complete the implementation of quote in such a way that it allows a user to look up a stock’s current price.
+
+Require that a user input a stock’s symbol, implemented as a text field whose name is symbol.
+Submit the user’s input via POST to /quote.
+Odds are you’ll want to create two new templates (e.g., quote.html and quoted.html). When a user visits /quote via GET, render one of those templates, inside of which should be an HTML form that submits to /quote via POST. In response to a POST, quote can render that second template, embedding within it one or more values from lookup.
+buy
+Complete the implementation of buy in such a way that it enables a user to buy stocks.
+
+Require that a user input a stock’s symbol, implemented as a text field whose name is symbol. Render an apology if the input is blank or the symbol does not exist (as per the return value of lookup).
+Require that a user input a number of shares, implemented as a text field whose name is shares. Render an apology if the input is not a positive integer.
+Submit the user’s input via POST to /buy.
+Odds are you’ll want to call lookup to look up a stock’s current price.
+Odds are you’ll want to SELECT how much cash the user currently has in users.
+Add one or more new tables to finance.db via which to keep track of the purchase. Store enough information so that you know who bought what at what price and when.
+Use appropriate SQLite types.
+Define UNIQUE indexes on any fields that should be unique.
+Define (non-UNIQUE) indexes on any fields via which you will search (as via SELECT with WHERE).
+Render an apology, without completing a purchase, if the user cannot afford the number of shares at the current price.
+When a purchase is complete, redirect the user back to the index page.
+You don’t need to worry about race conditions (or use transactions).
+Once you’ve implemented buy correctly, you should be able to see users’ purchases in your new table(s) via sqlite3 or phpLiteAdmin.
+
+index
+Complete the implementation of index in such a way that it displays an HTML table summarizing, for the user currently logged in, which stocks the user owns, the numbers of shares owned, the current price of each stock, and the total value of each holding (i.e., shares times price). Also display the user’s current cash balance along with a grand total (i.e., stocks’ total value plus cash).
+
+Odds are you’ll want to execute multiple SELECTs. Depending on how you implement your table(s), you might find GROUP BY HAVING SUM and/or WHERE of interest.
+Odds are you’ll want to call lookup for each stock.
+sell
+Complete the implementation of sell in such a way that it enables a user to sell shares of a stock (that he or she owns).
+
+Require that a user input a stock’s symbol, implemented as a select menu whose name is symbol. Render an apology if the user fails to select a stock or if (somehow, once submitted) the user does not own any shares of that stock.
+Require that a user input a number of shares, implemented as a text field whose name is shares. Render an apology if the input is not a positive integer or if the user does not own that many shares of the stock.
+Submit the user’s input via POST to /sell.
+When a sale is complete, redirect the user back to the index page.
+You don’t need to worry about race conditions (or use transactions).
+history
+Complete the implementation of history in such a way that it displays an HTML table summarizing all of a user’s transactions ever, listing row by row each and every buy and every sell.
+
+For each row, make clear whether a stock was bought or sold and include the stock’s symbol, the (purchase or sale) price, the number of shares bought or sold, and the date and time at which the transaction occurred.
+You might need to alter the table you created for buy or supplement it with an additional table. Try to minimize redundancies.
+personal touch
+Implement at least one personal touch of your choice:
+
+Allow users to change their passwords.
+Allow users to add additional cash to their account.
+Allow users to buy more shares or sell shares of stocks they already own via index itself, without having to type stocks’ symbols manually.
+Require users’ passwords to have some number of letters, numbers, and/or symbols.
+Implement some other feature of comparable scope.
+
 
 
 Artificial Intelligence:
