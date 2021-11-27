@@ -81,10 +81,77 @@ After outputting ciphertext, you should print a newline. Your program should the
 
 Week 3 Algorithms:
 
+Sort: given 3 C sorting algorithms, classify each in a separate text file.
+
+
+**Plurality.c:** Complete the implementation of plurality.c in such a way that the program simulates a plurality vote election.
+
+Complete the vote function.
+vote takes a single argument, a string called name, representing the name of the candidate who was voted for.
+If name matches one of the names of the candidates in the election, then update that candidate’s vote total to account for the new vote. The vote function in this case should return true to indicate a successful ballot.
+If name does not match the name of any of the candidates in the election, no vote totals should change, and the vote function should return false to indicate an invalid ballot.
+You may assume that no two candidates will have the same name.
+Complete the print_winner function.
+The function should print out the name of the candidate who received the most votes in the election, and then print a newline.
+It is possible that the election could end in a tie if multiple candidates each have the maximum number of votes. In that case, you should output the names of each of the winning candidates, each on a separate line.
+You should not modify anything else in plurality.c other than the implementations of the vote and print_winner functions (and the inclusion of additional header files, if you’d like).
+
+
+**Tideman.c:** Complete the implementation of tideman.c in such a way that it simulates a Tideman election.
+
+Complete the vote function.
+The function takes arguments rank, name, and ranks. If name is a match for the name of a valid candidate, then you should update the ranks array to indicate that the voter has the candidate as their rank preference (where 0 is the first preference, 1 is the second preference, etc.)
+Recall that ranks[i] here represents the user’s ith preference.
+The function should return true if the rank was successfully recorded, and false otherwise (if, for instance, name is not the name of one of the candidates).
+You may assume that no two candidates will have the same name.
+Complete the record_preferences function.
+The function is called once for each voter, and takes as argument the ranks array, (recall that ranks[i] is the voter’s ith preference, where ranks[0] is the first preference).
+The function should update the global preferences array to add the current voter’s preferences. Recall that preferences[i][j] should represent the number of voters who prefer candidate i over candidate j.
+You may assume that every voter will rank each of the candidates.
+Complete the add_pairs function.
+The function should add all pairs of candidates where one candidate is preferred to the pairs array. A pair of candidates who are tied (one is not preferred over the other) should not be added to the array.
+The function should update the global variable pair_count to be the number of pairs of candidates. (The pairs should thus all be stored between pairs[0] and pairs[pair_count - 1], inclusive).
+Complete the sort_pairs function.
+The function should sort the pairs array in decreasing order of strength of victory, where strength of victory is defined to be the number of voters who prefer the preferred candidate. If multiple pairs have the same strength of victory, you may assume that the order does not matter.
+Complete the lock_pairs function.
+The function should create the locked graph, adding all edges in decreasing order of victory strength so long as the edge would not create a cycle.
+Complete the print_winner function.
+The function should print out the name of the candidate who is the source of the graph. You may assume there will not be more than one source.
+You should not modify anything else in tideman.c other than the implementations of the vote, record_preferences, add_pairs, sort_pairs, lock_pairs, and print_winner functions (and the inclusion of additional header files, if you’d like). You are permitted to add additional functions to tideman.c, so long as you do not change the declarations of any of the existing functions.
+
+
 
 
 Week 4 Memory:
 
+**Volume.c:** Complete the implementation of volume.c, such that it changes the volume of a sound file by a given factor.
+
+The program accepts three command-line arguments: input represents the name of the original audio file, output represents the name of the new audio file that should be generated, and factor is the amount by which the volume of the original audio file should be scaled.
+For example, if factor is 2.0, then your program should double the volume of the audio file in input and save the newly generated audio file in output.
+Your program should first read the header from the input file and write the header to the output file. Recall that this header is always exactly 44 bytes long.
+Note that volume.c already defines a variable for you called HEADER_SIZE, equal to the number of bytes in the header.
+Your program should then read the rest of the data from the WAV file, one 16-bit (2-byte) sample at a time. Your program should multiply each sample by the factor and write the new sample to the output file.
+You may assume that the WAV file will use 16-bit signed values as samples. In practice, WAV files can have varying numbers of bits per sample, but we’ll assume 16-bit samples for this lab.
+Your program, if it uses malloc, must not leak any memory.
+
+
+**Filter.c (less):** Implement the functions in helpers.c such that a user can apply grayscale, sepia, reflection, or blur filters to their images.
+
+The function grayscale should take an image and turn it into a black-and-white version of the same image.
+The function sepia should take an image and turn it into a sepia version of the same image.
+The reflect function should take an image and reflect it horizontally.
+Finally, the blur function should take an image and turn it into a box-blurred version of the same image.
+You should not modify any of the function signatures, nor should you modify any other files other than helpers.c. 
+
+
+**Recovery.c:** Implement a program called recover that recovers JPEGs from a forensic image.
+
+Implement your program in a file called recover.c in a directory called recover.
+Your program should accept exactly one command-line argument, the name of a forensic image from which to recover JPEGs.
+If your program is not executed with exactly one command-line argument, it should remind the user of correct usage, and main should return 1.
+If the forensic image cannot be opened for reading, your program should inform the user as much, and main should return 1.
+The files you generate should each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
+Your program, if it uses malloc, must not leak any memory.
 
 
 Week 5 Data Structures:
