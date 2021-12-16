@@ -1,3 +1,8 @@
+<head>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+
+  </head>
+
 <h1><center>Welcome to the CovidTracker!</center></h1>
 <h3><center>Source: <a href="https://data.cdc.gov/Case-Surveillance/COVID-19-Case-Surveillance-Public-Use-Data-with-Ge/n8mc-b4w4">CDC</a></center></h3>
 
@@ -6,7 +11,59 @@
 <form action="/result" method="POST">
     
     <p>State</p>
-    <input type="text" name="state">
+    <select name="state" id="state">
+      <option value="AK">Alaska</option>
+      <option value="AL">Alabama</option>
+      <option value="AR">Arkansas</option>
+      <option value="AZ">Arizona</option>
+      <option value="CA">California</option>
+      <option value="CO">Colorado</option> <br>
+      <option value="CT">Conneticut</option> <br>
+      <option value="DE">Delaware</option> <br>
+      <option value="FL">Florida</option> <br>
+      <option value="GA">Georgia</option> <br>
+      <option value="HI">Hawaii</option> <br>
+      <option value="IA">Iowa</option> <br>
+      <option value="ID">Idaho</option> <br>
+      <option value="IL">Illinois</option> <br>
+      <option value="IN">Indiana</option> <br>
+      <option value="KS">Kansas</option> <br>
+      <option value="KY">Kentucky</option> <br>
+      <option value="LA">Louisiana</option> <br>
+      <option value="MA">Massachusetts</option> <br>
+      <option value="MD">Maryland</option> <br>
+      <option value="ME">Maine</option> <br>
+      <option value="MI">Michigan</option> <br>
+      <option value="MN">Minnesota</option> <br>
+      <option value="MO">Missouri</option> <br>
+      <option value="MS">Mississippi</option> <br>
+      <option value="MT">Montana</option> <br>
+      <option value="NC">North Carolina</option> <br>
+      <option value="ND">North Dakota</option> <br>
+      <option value="NE">Nebraska</option> <br>
+      <option value="NH">New Hampshire</option> <br>
+      <option value="NJ">New Jersey</option> <br>
+      <option value="NM">New Mexico</option> <br>
+      <option value="NV">Nevada</option> <br>
+      <option value="NY">New York</option> <br>
+      <option value="OH">Ohio</option> <br>
+      <option value="OK">Oklahoma</option> <br>
+      <option value="OR">Oregon</option> <br>
+      <option value="PA">Pennsylvania</option> <br>
+      <option value="RI">Rhode Island</option> <br>
+      <option value="SC">South Carolina</option> <br>
+      <option value="SD">South Dakota</option> <br>
+      <option value="TN">Tennessee</option> <br>
+      <option value="TX">Texas</option> <br>
+      <option value="UT">Utah</option> <br>
+      <option value="VA">Virginia</option> <br>
+      <option value="VT">Vermont</option> <br>
+      <option value="WA">Washington</option> <br>
+      <option value="WI">Wisconsin</option> <br>
+      <option value="WV">West Virginia</option> <br>
+      <option value="WY">Wyoming</option> <br>
+
+    </select> <br>
 
     <p>County</p>
     <input type="text" name="county">
