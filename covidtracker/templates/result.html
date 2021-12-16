@@ -1,0 +1,20 @@
+<h1>In results page</h1>
+
+The state was: {{state}} <br>
+The county was: {{county}} <br>
+The sex was: {{sex}} <br>
+The age was: {{age}} <br>
+The race was: {{race}}
+
+<table border="1">
+    {% for item in dict1 %}
+        <tr>
+            <td>{{item.res_state}}</td>
+            <td>{{item.res_county}}</td>
+            <td>{{item.sex}}</td>
+            <td>{{item.age_group}}</td>
+            <td>{{item.race}}</td>
+        </tr>
+    {% endfor %}
+</table>
+
