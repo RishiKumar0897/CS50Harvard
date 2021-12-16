@@ -1,12 +1,37 @@
-<h1>In results page</h1>
+<h1>Results</h1>
+<h3>Your search criteria was:</h3>
+<table border = 1>
+    <tr>
+        <td>State</td>
+        <td>{{state}}</td>
+    </tr>
+    <tr>
+        <td>County</td>
+        <td>{{county}}</td>
+    </tr>
+    <tr>
+        <td>Sex</td>
+        <td>{{sex}}</td>
+    </tr>
+    <tr>
+        <td>Age</td>
+        <td>{{age}}</td>
+    </tr>
+    <tr>
+        <td>Race</td>
+        <td>{{race}}</td>
+    </tr>
+</table> <br>
 
-The state was: {{state}} <br>
-The county was: {{county}} <br>
-The sex was: {{sex}} <br>
-The age was: {{age}} <br>
-The race was: {{race}}
-
-<table border="1">
+<h3>Cases that matched your criteria: {{case_count}}</h3>
+<table border="2">
+    <th>State</th>
+    <th>County</th>
+    <th>Sex</th>
+    <th>Age</th>
+    <th>Race</th>
+    <th>Current Case Status</th>
+    <th>Living Status</th>
     {% for item in dict1 %}
         <tr>
             <td>{{item.res_state}}</td>
@@ -14,6 +39,8 @@ The race was: {{race}}
             <td>{{item.sex}}</td>
             <td>{{item.age_group}}</td>
             <td>{{item.race}}</td>
+            <td>{{item.current_status}}</td>
+            <td>{{item.death_yn}}</td>
         </tr>
     {% endfor %}
 </table>
